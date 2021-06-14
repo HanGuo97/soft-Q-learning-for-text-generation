@@ -1,9 +1,5 @@
 # Text Generation with Efficient (Soft) Q-Learning
 
-# TODOS
-1. Add link to arXiv
-2. Update the main figure based on final version.
-
 [Link to the Paper](https://arxiv.org/)
 
 ![main](figs/main.png)
