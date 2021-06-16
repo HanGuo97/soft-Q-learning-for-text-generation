@@ -1,6 +1,7 @@
 # Text Generation with Efficient (Soft) Q-Learning
 
 [Text Generation with Efficient (Soft) Q-Learning](https://arxiv.org/abs/2106.07704)
+
 Han Guo, Bowen Tan, Zhengzhong Liu, Eric P. Xing, Zhiting Hu
 
 ![main](figs/main.png)
