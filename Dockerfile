@@ -54,9 +54,9 @@ RUN \
 # ---------------------------------------------
 # Build Python depencies and utilize caching
 # ---------------------------------------------
-COPY ./requirements.txt /workspace/joint-inference/requirements.txt
+COPY ./requirements.txt /workspace/soft-Q-learning/requirements.txt
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r /workspace/joint-inference/requirements.txt && \
+    pip install --no-cache-dir -r /workspace/soft-Q-learning/requirements.txt && \
     # Jupyter Extensions (https://plot.ly/python/getting-started/):
     # Avoid "JavaScript heap out of memory" errors during extension installation (OS X/Linux)
     export NODE_OPTIONS=--max-old-space-size=4096 && \
@@ -67,10 +67,10 @@ RUN pip install --no-cache-dir --upgrade pip && \
     unset NODE_OPTIONS
 
 # upload everything
-COPY . /workspace/joint-inference/
+COPY . /workspace/soft-Q-learning/
 
 # Set HOME
-ENV HOME="/workspace/joint-inference"
+ENV HOME="/workspace/soft-Q-learning"
 
 # ---------------------------------------------
 # Project-agnostic User-dependent Dependencies
