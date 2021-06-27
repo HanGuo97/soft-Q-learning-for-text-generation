@@ -488,8 +488,8 @@ class EntailmentClassifier3(object):
 
 
 class GPT2TopicReward(object):
-    WORDLISTS_BASE_DIR = "/workspace/joint-inference/experiments/wordlists"
-    PPLM_INPUTS_FILE_NAME = "/workspace/joint-inference/experiments/pplm-inputs.txt"
+    WORDLISTS_BASE_DIR = "/workspace/soft-Q-learning/experiments/wordlists"
+    PPLM_INPUTS_FILE_NAME = "/workspace/soft-Q-learning/experiments/pplm-inputs.txt"
     TOPICS = ["legal", "politics", "computers", "space", "religion", "science", "military"]
 
     def __init__(

@@ -173,7 +173,7 @@ def prepare_train_ops(
 def main(config: omegaconf.DictConfig) -> None:
     print(click.style(omegaconf.OmegaConf.to_yaml(config), fg="red"))
     # Looks like a hack
-    wandb.init(project="joint-inference", config=eval(str(config)))
+    wandb.init(project="soft-Q-learning", config=eval(str(config)))
     if not os.path.exists(config.save_dir):
         os.makedirs(config.save_dir)
 
