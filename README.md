@@ -7,7 +7,7 @@ Han Guo, Bowen Tan, Zhengzhong Liu, Eric P. Xing, Zhiting Hu
 
 # Requirements
 Please see `requirements.txt` and `Dockerfile` for detailed dependencies. The major ones include
-- `python 3.6 or later` (for type annotations and f-string)
+- `python 3.8 or later` (for type annotations and f-string)
 - `pytorch==1.8.1`
 - `transformers==4.5.1`
 
@@ -23,7 +23,7 @@ DOCKER_BUILDKIT=1 docker build \
 
 ### Additional steps (inside Docker)
 1. Install the master branch of `texar` (and a few other dependencies) via `bash scripts/install_dependencies.sh`
-2. Install [GEM-metrics](https://github.com/GEM-benchmark/GEM-metrics). We use the version at commit `2693f3439547a40897bc30c2ab70e27e992883c0`.
+2. Install [GEM-metrics](https://github.com/GEM-benchmark/GEM-metrics). We use the version at commit `2693f3439547a40897bc30c2ab70e27e992883c0`. Note that some dependencies might override `transformers` version.
 
 ### Data Setup
 1. Most of the data are available at `https://huggingface.co/datasets`.
