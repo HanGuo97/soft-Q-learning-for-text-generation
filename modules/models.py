@@ -23,7 +23,6 @@ from configs.models import (
     config_model_transformers_small)
 
 from sql.utils import ForwardMode
-from sql import helpers as sql_helpers
 from sql.types import (
     BatchType,
     FloatTensor,
@@ -141,11 +140,7 @@ class Transformer(nn.Module):
 
         helper = None
         if corruption_p is not None:
-            helper = sql_helpers.CorruptedGreedyEmbeddingHelper(
-                start_tokens=start_tokens,
-                end_token=self.eos_token_id,
-                vocab=self.target_vocab,
-                corruption_p=corruption_p)
+            raise NotImplementedError("Deprecated")
 
         return self.decoder(
             start_tokens=start_tokens,

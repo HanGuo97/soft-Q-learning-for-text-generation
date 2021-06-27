@@ -27,7 +27,7 @@ from itertools import chain
 from functools import partial
 from typing import Any, List, Tuple, Dict, Callable, Optional, cast
 
-from modules.models import Seq2SeqAttn, Transformer
+from modules.models import Transformer
 from modules.metrics import compute_GEM_metrics_from_outputs
 from sql.types import BatchType
 from sql.utils import ForwardMode
@@ -82,13 +82,11 @@ def prepare_model(
         max_decoding_length: int,
         use_behavior_model: bool = False,
 ) -> TXSoftQModel:
-    if config.architecture not in ["lstm", "transformer", "transformer_small"]:
+    if config.architecture not in ["transformer_small"]:
         raise ValueError
 
-    if config.architecture == "lstm":
-        ModelClass: Callable = Seq2SeqAttn
-    if config.architecture in ["transformer", "transformer_small"]:
-        ModelClass = partial(
+    if config.architecture in ["transformer_small"]:
+        ModelClass: Callable = partial(
             Transformer,
             config_name=config.architecture)
 

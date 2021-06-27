@@ -5,7 +5,6 @@ from typing import Tuple, Dict, Union, Optional, Callable, Any, cast
 from sql.utils import ForwardMode
 from sql import utils as sql_utils
 # from sql import replay_buffer
-from sql import target_networks
 from sql.modules_base import SoftQModelBase
 from sql.types import (
     BatchType,
@@ -51,14 +50,6 @@ class TXSoftQModel(SoftQModelBase):
         actor_model_constructor = None
         if target_update_method in ["copy", "polyak"]:
             target_model_constructor = model_constructor
-        if target_update_method in ["ground_truth"]:
-            target_update_method = None
-            target_model_constructor = lambda: cast(
-                TexarModules,
-                target_networks.Seq2SeqAttnTarget3(
-                    reward_shaping=reward_shaping,
-                    reward_shaping_min=reward_shaping_min,
-                    reward_shaping_max=reward_shaping_max))
 
         if sql_loss_impl in ["sac"]:
             actor_model_constructor = model_constructor
@@ -91,7 +82,7 @@ class TXSoftQModel(SoftQModelBase):
 
         if not isinstance(self._model, (Transformer, Seq2SeqAttn)):
             raise TypeError
-        if not isinstance(self._model_, ((Transformer, Seq2SeqAttn), target_networks.Seq2SeqAttnTarget3)):
+        if not isinstance(self._model_, (Transformer, Seq2SeqAttn)):
             raise TypeError
         if self._actor_model is not None and not isinstance(self._actor_model, (Transformer, Seq2SeqAttn)):
             raise TypeError
