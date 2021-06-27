@@ -1,22 +1,4 @@
 experiment_type: translation
-summarization:
-    mode: "???"
-    method: "???"
-    experiment_id: "???"
-    base_save_dir: "???"
-
-    temperature: 1.0
-    buffer_size: 1000
-    max_grad_norm: 5.0
-    demonstration_ratio: 0.5
-    finetune_learning_rate: 0.001
-    target_model_sync_steps: 100
-
-    total_steps: null
-    task_name: "e2e_nlg_cleaned"
-    checkpoint_file_name: null
-    save_dir: "${summarization.base_save_dir}/${summarization.temperature}-${summarization.buffer_size}-${summarization.max_grad_norm}-${summarization.demonstration_ratio}-${summarization.finetune_learning_rate}"
-
 translation:
     task_name: "???"
     training_mode: "???"
