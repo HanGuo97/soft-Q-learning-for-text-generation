@@ -11,8 +11,8 @@ from sql.types import (
     HF_BatchType,
     FloatTensor,
     LongTensor)
-from modules.models import Transformer, Seq2SeqAttn
-TexarModules = Union[Transformer, Seq2SeqAttn]
+from modules.models import Transformer
+TexarModules = Union[Transformer]
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
@@ -80,13 +80,13 @@ class TXSoftQModel(SoftQModelBase):
             beam_width=beam_width,
             reward_name=reward_name)
 
-        if not isinstance(self._model, (Transformer, Seq2SeqAttn)):
+        if not isinstance(self._model, Transformer):
             raise TypeError
-        if not isinstance(self._model_, (Transformer, Seq2SeqAttn)):
+        if not isinstance(self._model_, Transformer):
             raise TypeError
-        if self._actor_model is not None and not isinstance(self._actor_model, (Transformer, Seq2SeqAttn)):
+        if self._actor_model is not None and not isinstance(self._actor_model, Transformer):
             raise TypeError
-        if self._behavior_model is not None and not isinstance(self._behavior_model, (Transformer, Seq2SeqAttn)):
+        if self._behavior_model is not None and not isinstance(self._behavior_model, Transformer):
             raise TypeError
 
         # Mypy stuff

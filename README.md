@@ -11,6 +11,8 @@ Please see `requirements.txt` and `Dockerfile` for detailed dependencies. The ma
 - `pytorch==1.8.1`
 - `transformers==4.5.1`
 
+**Note**: if you ever encounter issues regarding `hydra`, consider downgrading it.
+
 # Setup
 ### Docker Setup
 To build the docker image, run the following script.
