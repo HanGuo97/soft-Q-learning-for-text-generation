@@ -89,6 +89,7 @@ python run_experiments.py \
 
 **Details**
 1. For different token length, remember to change the `max_length`.
+2. Looking for examples of off-policy data? Check [here](https://github.com/HanGuo97/soft-Q-learning-for-text-generation/issues/1)!
 
 ### Supervised Language Generation Tasks
 ```bash
