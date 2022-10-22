@@ -1,6 +1,6 @@
-# Text Generation with Efficient (Soft) Q-Learning
+# Efficient (Soft) Q-Learning for Text Generation with Limited Good Data
 
-[Text Generation with Efficient (Soft) Q-Learning](https://arxiv.org/abs/2106.07704)  
+[Efficient (Soft) Q-Learning for Text Generation with Limited Good Data](https://arxiv.org/abs/2106.07704)  
 Han Guo, Bowen Tan, Zhengzhong Liu, Eric P. Xing, Zhiting Hu
 
 ![main](figs/main.png)
